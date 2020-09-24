@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 
+app.use(express.json());
+// parses http request
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static("dist"));
 
 app.get("/", (req, res) => {
